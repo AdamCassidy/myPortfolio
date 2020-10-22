@@ -42,8 +42,7 @@ An app, made by request for the police, that quickly sends a notification of the
 - Volley
   <br/>
 
-<center><img src="https://user-images.githubusercontent.com/43080428/96632706-1809b700-12e6-11eb-802e-4eeff573a661.png" alt="logo" width="300"/></center>
-
+<img src="https://user-images.githubusercontent.com/43080428/96632706-1809b700-12e6-11eb-802e-4eeff573a661.png" alt="logo" width="300"/>
 
 This is a Python library, made with unit testing and test-driven development, that holds various unique object-oriented programming data structures and algorithms.
 
