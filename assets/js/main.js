@@ -83,13 +83,11 @@
     // Hack: Adjust margins when 'small' activates.
     breakpoints.on(">small", function () {
       $gallery.each(function () {
-        $(this)[0]._poptrox.windowMargin = 100;
       });
     });
 
     breakpoints.on("<=small", function () {
       $gallery.each(function () {
-        $(this)[0]._poptrox.windowMargin = 10;
       });
     });
   });
