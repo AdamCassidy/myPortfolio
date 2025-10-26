@@ -25,9 +25,9 @@ jobs:
         # Find and replace the placeholders in your main JS file
         # IMPORTANT: Change 'main.js' to the actual path of your JavaScript file!
         run: |
-          sed -i "s|__EMAILJS_PUBLIC_KEY__|${{ secrets.EMAILJS_PUBLIC_KEY }}|g" assets/js/main.js
-          sed -i "s|__EMAILJS_SERVICE_ID__|${{ secrets.EMAILJS_SERVICE_ID }}|g" assets/js/main.js
-          sed -i "s|__EMAILJS_TEMPLATE_ID__|${{ secrets.EMAILJS_TEMPLATE_ID }}|g" assets/js/main.js
+          sed -i "s|__EMAILJS_PUBLIC_KEY__|${{ secrets.EMAILJS_PUBLIC_KEY }}|g" main.js
+          sed -i "s|__EMAILJS_SERVICE_ID__|${{ secrets.EMAILJS_SERVICE_ID }}|g" main.js
+          sed -i "s|__EMAILJS_TEMPLATE_ID__|${{ secrets.EMAILJS_TEMPLATE_ID }}|g" main.js
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
