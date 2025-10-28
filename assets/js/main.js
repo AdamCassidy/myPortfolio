@@ -3,7 +3,6 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 (function ($) {
   var $window = $(window),
     $body = $("body"),
@@ -26,166 +25,112 @@
       $body.removeClass("is-preload");
     }, 100);
   });
-
+  
   // Touch mode.
-  if (browser.mobile) $body.addClass("is-touch");
-  else {
-    breakpoints.on("<=small", function () {
-      $body.addClass("is-touch");
-    });
-
-    breakpoints.on(">small", function () {
-      $body.removeClass("is-touch");
-    });
-  }
-
-  // Fix: IE flexbox fix.
-  if (browser.name == "ie") {
-    var $main = $(".main.fullscreen"),
-      IEResizeTimeout;
-
-    $window
-      .on("resize.ie-flexbox-fix", function () {
-        clearTimeout(IEResizeTimeout);
-
-        IEResizeTimeout = setTimeout(function () {
-          var wh = $window.height();
-
-          $main.each(function () {
-            var $this = $(this);
-
-            $this.css("height", "");
-
-            if ($this.height() <= wh) $this.css("height", wh - 50 + "px");
-          });
-        });
-      })
-      .triggerHandler("resize.ie-flexbox-fix");
-  }
 
   // Gallery.
-  $window.on("load", function () {
-    var $gallery = $(".gallery");
+  document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('pageOverlay');
+            const cardContainers = document.querySelectorAll('.project-card-container');
+            let activeContainer = null;
 
-    $gallery.poptrox({
-      baseZIndex: 10001,
-      useBodyOverflow: false,
-      usePopupEasyClose: true,
-      overlayColor: "#1f2328",
-      overlayOpacity: 0.65,
-      usePopupDefaultStyling: false,
-      usePopupCaption: true,
-      popupLoaderText: "",
-      windowMargin: 50,
-      usePopupNav: false,
-    });
+            cardContainers.forEach(container => {
+                const card = container.querySelector('.project-card');
+                const projectId = card.dataset.projectId;
+                const contentHTML = document.getElementById(projectId).innerHTML;
+                container.querySelector('.card-face--back').innerHTML = `<div class="project-card-content">${contentHTML}</div>`;
+
+                card.addEventListener('click', () => {
+                    if (activeContainer) return;
+                    
+                    activeContainer = container;
+                    const cardRect = card.getBoundingClientRect();
+
+                    const finalWidth = Math.min(window.innerWidth * 0.8, 800);
+                    const scale = finalWidth / cardRect.width;
+                    const translateX = (window.innerWidth / 2) - (cardRect.left + cardRect.width / 2);
+                    const translateY = (window.innerHeight / 2) - (cardRect.top + cardRect.height / 2);
+
+                    // Set CSS variables for the animation
+                    container.style.setProperty('--start-top', `${cardRect.top}px`);
+                    container.style.setProperty('--start-left', `${cardRect.left}px`);
+                    container.style.setProperty('--start-width', `${cardRect.width}px`);
+                    container.style.setProperty('--start-height', `${cardRect.height}px`);
+                    container.style.setProperty('--end-x', `${translateX}px`);
+                    container.style.setProperty('--end-y', `${translateY}px`);
+                    container.style.setProperty('--end-scale', scale);
+
+                    document.body.classList.add('modal-active');
+                    overlay.classList.add('is-visible');
+                    cardContainers.forEach(c => {
+                        if (c !== container) c.classList.add('is-inactive');
+                    });
+                    
+                    // Frame 1: Apply fixed positioning. Browser renders this.
+                    container.classList.add('is-expanded');
+
+                    // Frame 2: Apply the transform. Browser animates this.
+                    requestAnimationFrame(() => {
+                        container.classList.add('is-animating');
+                        container.classList.add('is-flipped');
+                    });
+                });
+            });
+
+            function closeModal() {
+                if (!activeContainer) return;
+
+                // Reverse the animation: remove transform first
+                activeContainer.classList.remove('is-flipped');
+                activeContainer.classList.remove('is-animating');
+
+                setTimeout(() => {
+                    overlay.classList.remove('is-visible');
+                    document.body.classList.remove('modal-active');
+                    cardContainers.forEach(c => c.classList.remove('is-inactive'));
+                    
+                    // Listen for the transition to end before cleaning up
+                    activeContainer.addEventListener('transitionend', () => {
+                        activeContainer.classList.remove('is-expanded');
+                        activeContainer.style = null;
+                        activeContainer = null;
+                    }, { once: true });
+                    
+                }, 500); // This delay should be >= the flip animation duration
+            }
+
+            overlay.addEventListener('click', closeModal);
 
     // Hack: Adjust margins when 'small' activates.
-    breakpoints.on(">small", function () {
-      $gallery.each(function () {
-      });
-    });
-
-    breakpoints.on("<=small", function () {
-      $gallery.each(function () {
-      });
-    });
   });
 
   // Section transitions.
-  if (browser.canUse("transition")) {
-    var on = function () {
-      // Galleries.
-      $(".gallery").scrollex({
-        top: "30vh",
-        bottom: "30vh",
-        delay: 50,
-        initialize: function () {
-          $(this).addClass("inactive");
-        },
-        terminate: function () {
-          $(this).removeClass("inactive");
-        },
-        enter: function () {
-          $(this).removeClass("inactive");
-        },
-        leave: function () {
-          $(this).addClass("inactive");
-        },
-      });
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+  });
+  const publicKey = "__EMAILJS_PUBLIC_KEY__";
+  const serviceID = "__EMAILJS_SERVICE_ID__";
+  const templateID = "__EMAILJS_TEMPLATE_ID__";
 
-      // Generic sections.
-      $(".main.style1").scrollex({
-        mode: "middle",
-        delay: 100,
-        initialize: function () {
-          $(this).addClass("inactive");
-        },
-        terminate: function () {
-          $(this).removeClass("inactive");
-        },
-        enter: function () {
-          $(this).removeClass("inactive");
-        },
-        leave: function () {
-          $(this).addClass("inactive");
-        },
-      });
+  emailjs.init(publicKey);
 
-      $(".main.style2").scrollex({
-        mode: "middle",
-        delay: 100,
-        initialize: function () {
-          $(this).addClass("inactive");
-        },
-        terminate: function () {
-          $(this).removeClass("inactive");
-        },
-        enter: function () {
-          $(this).removeClass("inactive");
-        },
-        leave: function () {
-          $(this).addClass("inactive");
-        },
-      });
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => alert("Message sent!"))
+      .catch(err => alert("Failed: " + JSON.stringify(err)));
+  });
 
-      // Contact.
-      $("#contact").scrollex({
-        top: "50%",
-        delay: 50,
-        initialize: function () {
-          $(this).addClass("inactive");
-        },
-        terminate: function () {
-          $(this).removeClass("inactive");
-        },
-        enter: function () {
-          $(this).removeClass("inactive");
-        },
-        leave: function () {
-          $(this).addClass("inactive");
-        },
-      });
-    };
-
-    var off = function () {
-      // Galleries.
-      $(".gallery").unscrollex();
-
-      // Generic sections.
-      $(".main.style1").unscrollex();
-
-      $(".main.style2").unscrollex();
-
-      // Contact.
-      $("#contact").unscrollex();
-    };
-
-    breakpoints.on("<=small", off);
-    breakpoints.on(">small", on);
-  }
-
-  // Events.
+    // Events.
   var resizeTimeout, resizeScrollTimeout;
 
   $window
