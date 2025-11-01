@@ -18,6 +18,9 @@
     /></noscript>
   </head>
   <body class="is-preload">
+    <div id="preloader">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
     <!-- Header -->
     <header id="header">
       <h1>Adam Cassidy</h1>
@@ -67,6 +70,7 @@
         <header>
           <h2>My Work</h2>
         </header>
+        <button id="showOrHideDetails">Show Details</button>
         <!-- TODO: Show/hide details button -->
       <!-- <div>
         <button class="button anchored">Show/hide details</button>
@@ -101,8 +105,8 @@
                     <div class="card-flipper">
                         <div class="card-face card-face--front">
                             <img src="images/detectPhoneMovement.gif" alt="DetectPhoneMovement">
-                            <h1 style="color: black; font-size: 34px">
-                Detect Phone Movement
+                            <h1>
+                DetectPhoneMovement
               </h1>
                         </div>
                         <div class="card-face card-face--back"></div>
@@ -163,15 +167,15 @@
                       <li>Authentication and validation</li>
                       <li>Realtime communication</li>
                     </ul>
-                    <span><a
+                    <span><a class="project-link"
                         href="https://secondopinionforum.com/about"
-                        target="_blank" style="color: black; margin: 5px"
+                        target="_blank"
                         >https://secondopinionforum.com/about</a>
                     </span></br>
-                    <span><a
+                    <span><a class="project-link"
                         href="https://github.com/AdamCassidy/feedback-app"
-                        target="_blank" style="color: black; margin: 5px"
-                        >2nd-Opinion-Code</a>
+                        target="_blank"
+                        >2nd-Opinion-Code →</a>
                     </span>
                 </div>
             </div>
@@ -195,9 +199,9 @@
                       <li>Javascript</li>
                     </ul>
                     <span>
-                      <a href="https://github.com/AdamCassidy/GreenThumb/tree/master-backend/backend"
-                        target="_blank" style="color: black; margin: 5px">
-                        Green-Thumb-Code
+                      <a class="project-link" href="https://github.com/AdamCassidy/GreenThumb/tree/master-backend/backend"
+                        target="_blank">
+                        Green-Thumb-Code →
                       </a>
                     </span>
                 </div>
@@ -217,10 +221,10 @@
                             <li>Volley</li>
                         </ul>
                         <span>
-                          <a
+                          <a class="project-link"
                             href="https://github.com/AdamCassidy/DetectPhoneMovement"
-                            target="_blank" style="color: black; margin: 5px"
-                            >Detect-Phone-Movement-Code</a
+                            target="_blank"
+                            >Detect-Phone-Movement-Code →</a
                           >
                         </span>
                 </div>
@@ -250,9 +254,9 @@
                         <li>Data visualization</li>
                         <li>Python</li>
                       </ul>
-                      <a href="https://huggingface.co/Narrator5000/llavanext-finetuned-stackoverflow-vqa"
-                        target="_blank" style="color: black; margin: 5px"
-                        >Software-Pic-Assistant-Model-Card
+                      <a class="project-link" href="https://huggingface.co/Narrator5000/llavanext-finetuned-stackoverflow-vqa"
+                        target="_blank"
+                        >Software-Pic-Assistant-Model-Card →
                       </a>
                     </div>
             </div>
@@ -272,14 +276,157 @@
                         <li>Python</li>
                       </ul>
                       <span>
-                        <a href="https://github.com/AdamCassidy/PyBraid"
-                          target="_blank" style="color: black; margin: 5px"
-                          >PyBraid-Code
+                        <a class="project-link" href="https://github.com/AdamCassidy/PyBraid"
+                          target="_blank"
+                          >PyBraid-Code →
                         </a>
                       </span>
                 </div>
             </div>
         </div>
+        
+    </section>
+    <section>
+      <div class="project-details-list hidden">
+        <!-- 2nd Opinion Project -->
+        <div class="project-details-card">
+          <div class="project-layout">
+            <div class="project-image-column">
+              <img src="images/2ndOpinionFullLogo.png" alt="2nd Opinion project screenshot">
+              <div class="skills-section">
+                <h3 class="skills-title">Skills Gained</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Vue.js</span>
+                  <span class="skill-badge">Sass</span>
+                  <span class="skill-badge">Webpack</span>
+                  <span class="skill-badge">SEO</span>
+                  <span class="skill-badge">Performance optimization</span>
+                  <span class="skill-badge">Authentication and validation</span>
+                  <span class="skill-badge">Realtime communication</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h2 class="project-title">2nd Opinion</h2>
+              <div class="project-description">
+                <p>A responsive social media forum that's focused on discussion of constructive feedback. It was made with Vue.js and Firebase. It uses Vuex to manage state and makes RESTful API calls to Firebase's realtime database where it holds user's content. It uses Firebase's authentication service and funnels alert messages from them. The app also uses custom form validation for its authentication flow. Users can upload avatars, or images to their posts, and they are kept in Firebase storage.</p>
+                <p>The site is secure through SSL. Performance is optimized with asynchronous components. SEO is optimized with meta tags. Also, all posts throughout time can be viewed because of an infinite scroll implementation. They can also comment and reply to each other in realtime on their posts and delete or edit all of their content. Users can also tag a topic to their post if they please or view posts on a specific topic. JS cookie and Vuex are used to persist state, and Sass is used for the styling.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://secondopinionforum.com/about" target="_blank" rel="noopener noreferrer" class="project-link">Live Site →</a>
+                <a href="https://github.com/AdamCassidy/feedback-app" target="_blank" rel="noopener noreferrer" class="project-link">Source Code →</a>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+        <!-- GreenThumb Project -->
+        <div class="project-details-card">
+          <div class="project-layout">
+            <div class="project-image-column">
+              <img src="images/greenthumbLogo.png" alt="GreenThumb project screenshot">
+              <div class="skills-section">
+                <h3 class="skills-title">Skills Gained</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">RESTful APIs</span>
+                  <span class="skill-badge">Git</span>
+                  <span class="skill-badge">Node.js</span>
+                  <span class="skill-badge">Javascript</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h2 class="project-title">GreenThumb</h2>
+              <div class="project-description">
+                <p>This is a responsive mobile app that stores a user's photo of a local plant with MS SQL and Javascript, and then identifies its species with Python. Registered users can also upload their photographs to the appropriate species' page where they can be seen by other users. I worked on the back end, on the RESTful API and Photo class, with Node.js and Express. This was made in an Agile environment, using Git and integration testing.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/AdamCassidy/GreenThumb/tree/master-backend/backend" target="_blank" rel="noopener noreferrer" class="project-link">Source Code →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DetectPhoneMovement Project -->
+        <div class="project-details-card">
+          <div class="project-layout">
+            <div class="project-image-column">
+              <img src="images/detectPhoneMovement.gif" alt="DetectPhoneMovement project screenshot">
+              <div class="skills-section">
+                <h3 class="skills-title">Skills Gained</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Android Studio</span>
+                  <span class="skill-badge">Firebase</span>
+                  <span class="skill-badge">Volley</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h2 class="project-title">DetectPhoneMovement</h2>
+              <div class="project-description">
+                <p>An app, made by request for the police, that quickly sends a notification of the unique id of a phone if it was even slightly moved.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/AdamCassidy/DetectPhoneMovement" target="_blank" rel="noopener noreferrer" class="project-link">Source Code →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Pic Assistant Project -->
+        <div class="project-details-card">
+          <div class="project-layout">
+            <div class="project-image-column">
+              <img src="images/softwarePicAssistant.png" alt="Software Pic Assistant project screenshot">
+              <div class="skills-section">
+                <h3 class="skills-title">Skills Gained</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Data pipelines</span>
+                  <span class="skill-badge">Data visualization</span>
+                  <span class="skill-badge">Python</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h2 class="project-title">Software Pic Assistant</h2>
+              <div class="project-description">
+                <p>This model is a finetuned version of LLaVA-Next (llava-hf/llava-v1.6-mistral-7b-hf) specifically for visual question answering (VQA) on Stack Overflow questions containing images. The model was finetuned using QLoRA with 4-bit quantization, optimized to handle both text and image inputs. The training dataset was filtered from the mirzaei2114/stackoverflowVQA-filtered-small dataset. Only samples with a maximum input length of 1024 (for both question and answer combined) were used. Images were kept to size to capture detail needed for methods such as optical character recognition.</p>
+                <p>Visual Question Answering (VQA) on technical Stack Overflow (software-adjacent) questions with accompanying images. Drag a snipping rectangle for a screenshot around the exact focus/context for a question related to software development (usually front end) and accompany it with the question for inference.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://huggingface.co/Narrator5000/llavanext-finetuned-stackoverflow-vqa" target="_blank" rel="noopener noreferrer" class="project-link">Model Card →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PyBraid Project -->
+        <div class="project-details-card">
+          <div class="project-layout">
+            <div class="project-image-column">
+              <img src="images/pybraidLogo.png" alt="PyBraid project screenshot">
+              <div class="skills-section">
+                <h3 class="skills-title">Skills Gained</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Data structures</span>
+                  <span class="skill-badge">Sorting algorithms</span>
+                  <span class="skill-badge">Python</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h2 class="project-title">PyBraid</h2>
+              <div class="project-description">
+                <p>This is a Python library, made with unit testing and test-driven development, that holds various unique object-oriented programming data structures and algorithms.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/AdamCassidy/PyBraid" target="_blank" rel="noopener noreferrer" class="project-link">Source Code →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Contact -->
     <section id="contact" class="main style3 secondary">
@@ -292,15 +439,15 @@
           <div class="box">
             <div class="form-group">
                 <label for="user_name">Name</label>
-                <input type="text" name="user_name" required />
+                <input id="user_name" type="text" name="user_name" required />
             </div>
             <div class="form-group">
                 <label for="user_email">Email</label>
-                <input type="email" name="user_email" required />
+                <input id="user_email" type="email" name="user_email" required />
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea name="message" required></textarea>
+                <textarea id="message" name="message" required></textarea>
             </div>
             <div class="form-group submit-button-group">
                 <button id="contactButton" type="submit">Send Message</button>
@@ -335,12 +482,10 @@
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
     <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>

@@ -19,14 +19,10 @@
     xsmall: [null, "480px"],
   });
 
-  // Play initial animations on page load.
-  $window.on("load", function () {
-    setTimeout(function () {
-      $body.removeClass("is-preload");
-    }, 100);
+  window.addEventListener('load', function() {
+    document.body.classList.remove('is-preload');
+    document.body.classList.add('is-loaded');
   });
-  
-  // Touch mode.
 
   // Gallery.
   document.addEventListener('DOMContentLoaded', () => {
@@ -66,13 +62,12 @@
                         if (c !== container) c.classList.add('is-inactive');
                     });
                     
-                    // Frame 1: Apply fixed positioning. Browser renders this.
                     container.classList.add('is-expanded');
 
-                    // Frame 2: Apply the transform. Browser animates this.
                     requestAnimationFrame(() => {
                         container.classList.add('is-animating');
                         container.classList.add('is-flipped');
+                        document.getElementById("work").style.setProperty('padding-bottom', `${cardRect.height}px`);
                     });
                 });
             });
@@ -80,7 +75,6 @@
             function closeModal() {
                 if (!activeContainer) return;
 
-                // Reverse the animation: remove transform first
                 activeContainer.classList.remove('is-flipped');
                 activeContainer.classList.remove('is-animating');
 
@@ -89,14 +83,14 @@
                     document.body.classList.remove('modal-active');
                     cardContainers.forEach(c => c.classList.remove('is-inactive'));
                     
-                    // Listen for the transition to end before cleaning up
                     activeContainer.addEventListener('transitionend', () => {
+                        document.getElementById("work").style.setProperty('padding-bottom', '0px');
                         activeContainer.classList.remove('is-expanded');
                         activeContainer.style = null;
                         activeContainer = null;
                     }, { once: true });
                     
-                }, 500); // This delay should be >= the flip animation duration
+                }, 500);
             }
 
             overlay.addEventListener('click', closeModal);
@@ -117,6 +111,18 @@
         }
     });
   });
+
+  document.getElementById('showOrHideDetails').addEventListener('click', function(e) {
+    const projectDetailsList = document.querySelector('.project-details-list')
+    const projectGrid = document.querySelector('.projects-grid')
+    projectDetailsList.classList.toggle('hidden');
+    projectGrid.classList.toggle('hidden');
+    if (projectDetailsList.classList.contains('hidden')) {
+      e.target.innerHTML = "Show Details"
+    } else {
+      e.target.innerHTML = "Hide Details"
+    }
+  })
   const publicKey = "__EMAILJS_PUBLIC_KEY__";
   const serviceID = "__EMAILJS_SERVICE_ID__";
   const templateID = "__EMAILJS_TEMPLATE_ID__";

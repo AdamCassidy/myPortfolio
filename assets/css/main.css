@@ -7,6 +7,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.hidden {
+  display: none !important;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -113,229 +117,34 @@ input, select, textarea {
 		}
 
 /* Spinner */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; 
+  color: #39454b;
+  opacity: 0;
+  animation: preloader-fade-in 0.5s ease forwards;
+}
 
-	@-moz-keyframes spinner-rotate {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-		}
+@keyframes preloader-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-		100% {
-			-moz-transform: scale(1) rotate(360deg);
-			-webkit-transform: scale(1) rotate(360deg);
-			-ms-transform: scale(1) rotate(360deg);
-			transform: scale(1) rotate(360deg);
-		}
-	}
-
-	@-webkit-keyframes spinner-rotate {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-		}
-
-		100% {
-			-moz-transform: scale(1) rotate(360deg);
-			-webkit-transform: scale(1) rotate(360deg);
-			-ms-transform: scale(1) rotate(360deg);
-			transform: scale(1) rotate(360deg);
-		}
-	}
-
-	@-ms-keyframes spinner-rotate {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-		}
-
-		100% {
-			-moz-transform: scale(1) rotate(360deg);
-			-webkit-transform: scale(1) rotate(360deg);
-			-ms-transform: scale(1) rotate(360deg);
-			transform: scale(1) rotate(360deg);
-		}
-	}
-
-	@keyframes spinner-rotate {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-		}
-
-		100% {
-			-moz-transform: scale(1) rotate(360deg);
-			-webkit-transform: scale(1) rotate(360deg);
-			-ms-transform: scale(1) rotate(360deg);
-			transform: scale(1) rotate(360deg);
-		}
-	}
+body.is-loaded #preloader {
+  opacity: 0 !important;
+  pointer-events: none; 
+  transition: opacity 0.75s ease;
+}
 
 /* Loader */
-
-	@-moz-keyframes spinner-show {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@-webkit-keyframes spinner-show {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@-ms-keyframes spinner-show {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@keyframes spinner-show {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@-moz-keyframes spinner-hide {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		99% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		100% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: -1;
-		}
-	}
-
-	@-webkit-keyframes spinner-hide {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		99% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		100% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: -1;
-		}
-	}
-
-	@-ms-keyframes spinner-hide {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		99% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		100% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: -1;
-		}
-	}
-
-	@keyframes spinner-hide {
-		0% {
-			-moz-transform: scale(1) rotate(0deg);
-			-webkit-transform: scale(1) rotate(0deg);
-			-ms-transform: scale(1) rotate(0deg);
-			transform: scale(1) rotate(0deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		99% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: 100001;
-		}
-
-		100% {
-			-moz-transform: scale(0.5) rotate(360deg);
-			-webkit-transform: scale(0.5) rotate(360deg);
-			-ms-transform: scale(0.5) rotate(360deg);
-			transform: scale(0.5) rotate(360deg);
-			color: #e5e6e7;
-			z-index: -1;
-		}
-	}
-
 	@-moz-keyframes overlay-hide {
 		0% {
 			opacity: 1;
@@ -429,10 +238,6 @@ input, select, textarea {
 	}
 
 		body:before {
-			-moz-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
-			-webkit-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
-			-ms-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
-			animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
 			-moz-transform-origin: 50% 50%;
 			-webkit-transform-origin: 50% 50%;
 			-ms-transform-origin: 50% 50%;
@@ -475,23 +280,6 @@ input, select, textarea {
 			top: 0;
 			width: 100%;
 			z-index: -1;
-		}
-
-		body.is-preload:before {
-			-moz-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
-			-webkit-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
-			-ms-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
-			animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
-			z-index: 100001;
-		}
-
-		body.is-preload:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			opacity: 1;
-			z-index: 100000;
 		}
 
 	@media (-webkit-min-device-pixel-ratio: 2) {
@@ -769,6 +557,18 @@ input, select, textarea {
 			button.style2.down {
 				background-image: url("images/arrow.svg");
 			}
+
+	#showOrHideDetails {
+		margin: 1em;
+		background-color: rgb(38 166 230);
+	}
+
+	@media screen and (max-width: 525px) {
+		#showOrHideDetails {
+			display: none;
+		}
+	}
+
 	#contact-form {
 	max-width: 600px;
 	margin-left: auto;
@@ -1428,6 +1228,17 @@ input, select, textarea {
             transform-style: preserve-3d;
 		}
 
+		.project-card h1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+			color: white;
+			text-shadow: 1px 1px 2px black;
+			font-size: 34px;
+		}
+
         .card-flipper {
             position: absolute;
 			top: 0;
@@ -1494,6 +1305,115 @@ input, select, textarea {
 
 		.card-face--back::-webkit-scrollbar-thumb:hover {
 		background: #a8a8a8;
+		}
+
+		.project-details-list {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		}
+
+		.project-details-card {
+		background: #ffffff;
+		border: 1px solid #e5e5e5;
+		border-radius: 0.5rem;
+		overflow: hidden;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		transition: box-shadow 0.3s ease;
+		padding: 1.5rem 1.5rem 0 1.5rem;
+		}
+
+		.project-layout {
+		display: flex;
+		flex-direction: column;
+		}
+
+		.project-image-column img {
+		width: 100%;
+		}
+
+		.project-content {
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		}
+
+		.project-title {
+		font-size: 1.75rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+		color: #1a1a1a;
+		}
+
+		.project-description {
+		margin-bottom: 1.5rem;
+		}
+
+		.project-description p {
+		color: #666666;
+		margin-bottom: 0.75rem;
+		line-height: 1.7;
+		}
+
+		.project-description p:last-child {
+		margin-bottom: 0;
+		}
+
+		.skills-section {
+		margin-bottom: 1.5rem;
+		}
+
+		.skills-title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+		color: #1a1a1a;
+		}
+
+		.skills-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		}
+
+		.skill-badge {
+		padding: 0.5rem 0.75rem;
+		background-color: #f5f5f5;
+		color: #333333;
+		border-radius: 0.375rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+		}
+
+		.project-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		}
+
+		.project-link {
+		color: #0070f3;
+		text-decoration: none;
+		font-weight: 500;
+		transition: text-decoration 0.2s ease;
+		}
+
+		.project-link:hover {
+		text-decoration: underline;
+		}
+
+		.project-layout {
+			flex-direction: row;
+			gap: 2rem;
+		}
+
+		.project-image-column {
+			width: 30%;
+		}
+
+		.project-content {
+			width: 70%;
+			padding: 2rem;
 		}
 
         .overlay {
@@ -2124,7 +2044,7 @@ input, select, textarea {
 
 		.main.style3 {
 			text-align: center;
-			padding: 6em 0 6em 0;
+			padding: 6em 0 0 0;
 		}
 
 			.main.style3 .content > header {
@@ -2163,7 +2083,7 @@ input, select, textarea {
 					background-image: url("images/dark-arrow.svg");
 				}
 
-		body.is-touch .main {
+		body .main {
 			background-attachment: scroll !important;
 		}
 
@@ -2334,6 +2254,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
+		text-shadow: 1px 1px 2px black;
 		background: url("images/overlay.png"), url("../../images/cliff.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
