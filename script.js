@@ -130,63 +130,6 @@ if (nav && hasFinePointer && !prefersReducedMotion) {
   }, { passive: true });
 }
 
-// ---- Lighthouse Scores (PageSpeed Insights API) ----
-(function fetchLighthouseScores() {
-  const SITE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? null
-    : window.location.href;
-
-  const metrics = document.querySelectorAll('.lighthouse__metric');
-  const circumference = 2 * Math.PI * 52; // r=52
-
-  function setScore(el, score) {
-    const ring = el.querySelector('.lighthouse__ring-fill');
-    const label = el.querySelector('.lighthouse__score');
-    const value = Math.round(score * 100);
-    const offset = circumference - (score * circumference);
-
-    // Color coding
-    let color = 'red';
-    if (value >= 90) color = 'green';
-    else if (value >= 50) color = 'orange';
-    el.setAttribute('data-color', color);
-
-    label.textContent = value;
-    label.setAttribute('data-score', value);
-    ring.style.strokeDashoffset = offset;
-  }
-
-  const categories = ['performance', 'accessibility', 'seo'];
-  const categoryParams = categories.map(c => `category=${c.toUpperCase()}`).join('&');
-  const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(SITE_URL)}&${categoryParams}`;
-
-  function loadScores() {
-    fetch(apiUrl)
-      .then(res => res.json())
-      .then(data => {
-        if (!data.lighthouseResult) return;
-        const cats = data.lighthouseResult.categories;
-        metrics.forEach(el => {
-          const cat = el.getAttribute('data-category');
-          if (cats[cat]) {
-            setScore(el, cats[cat].score);
-          }
-        });
-        document.querySelector('.lighthouse__note').textContent =
-          'Scores fetched live via Google PageSpeed Insights API';
-      })
-      .catch(() => {
-        document.querySelector('.lighthouse__note').textContent =
-          'Could not fetch Lighthouse scores — try refreshing';
-      });
-  }
-
-  // Defer non-critical fetch so it does not compete with first render.
-  if ('requestIdleCallback' in window) {
-    window.requestIdleCallback(loadScores, { timeout: 3000 });
-    return;
-  }
-
-  window.setTimeout(loadScores, 1200);
-})();
+// ---- Lighthouse Section ----
+// Uses static markup in index.html with a link to Google verification.
 
