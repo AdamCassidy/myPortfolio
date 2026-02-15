@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adam Cassidy — Full Stack Developer. AWS Certified Solutions Architect. Building organized, intuitive software with Vue.js, Node.js, Python, and more.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Adam Cassidy — Full Stack Developer">
+  <meta property="og:description" content="Full stack developer building organized, intuitive software with Vue.js, Node.js, Python, and AWS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adamcassidy.dev/">
+  <meta property="og:image" content="https://adamcassidy.dev/images/profilePic.jpg">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="10" fill="%230a0a0a"/%3E%3Ctext x="50%25" y="56%25" dominant-baseline="middle" text-anchor="middle" font-size="34" font-family="Arial, sans-serif" fill="%23e85d26"%3EAC%3C/text%3E%3C/svg%3E'>
+  <title>Adam Cassidy — Full Stack Developer</title>
+  <link rel="preload" as="image" href="images/profilePic.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Cursor follower -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__links">
+      <a href="#work" class="nav__link" data-text="Work">Work</a>
+      <a href="#about" class="nav__link" data-text="About">About</a>
+      <a href="#contact" class="nav__link" data-text="Contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero__content">
+      <div class="hero__center">
+        <div class="hero__profile-wrap">
+          <img src="images/profilePic.jpg" alt="Adam Cassidy profile photo" class="hero__profile-img" width="320" height="380" fetchpriority="high">
+        </div>
+        <div class="hero__copy">
+          <span class="hero__tag">Adam Cassidy</span>
+          <h1 class="hero__title">
+            <span class="hero__line">
+              <span class="hero__word" data-delay="0">Full Stack</span>
+            </span>
+            <span class="hero__line">
+              <span class="hero__word" data-delay="1">Developer</span>
+            </span>
+          </h1>
+          <p class="hero__description">
+            I build <em>organized</em>, user-focused software that is as clean behind the scenes as it is <em>intuitive</em> on the screen.
+          </p>
+          <div class="hero__scroll">
+            <span class="hero__scroll-text hero__scroll-text--mouse">Scroll</span>
+            <span class="hero__scroll-text hero__scroll-text--touch">Swipe</span>
+            <span class="hero__scroll-icon hero__scroll-icon--mouse" aria-hidden="true">
+              <span class="hero__scroll-wheel"></span>
+            </span>
+            <span class="hero__scroll-icon hero__scroll-icon--touch" aria-hidden="true">
+              <span class="hero__swipe-chevron"></span>
+              <span class="hero__swipe-chevron"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__marquee" aria-hidden="true">
+      <div class="hero__marquee-track">
+        <span>Vue.js &mdash; Node.js &mdash; Python &mdash; AWS &mdash; Play Framework &mdash; PostgreSQL &mdash; Firebase &mdash; Docker &mdash; CI/CD &mdash; Machine Learning &mdash; System Design &mdash;&nbsp;</span>
+        <span>Vue.js &mdash; Node.js &mdash; Python &mdash; AWS &mdash; Play Framework &mdash; PostgreSQL &mdash; Firebase &mdash; Docker &mdash; CI/CD &mdash; Machine Learning &mdash; System Design &mdash;&nbsp;</span>
+        <span>Vue.js &mdash; Node.js &mdash; Python &mdash; AWS &mdash; Play Framework &mdash; PostgreSQL &mdash; Firebase &mdash; Docker &mdash; CI/CD &mdash; Machine Learning &mdash; System Design &mdash;&nbsp;</span>
+        <span>Vue.js &mdash; Node.js &mdash; Python &mdash; AWS &mdash; Play Framework &mdash; PostgreSQL &mdash; Firebase &mdash; Docker &mdash; CI/CD &mdash; Machine Learning &mdash; System Design &mdash;&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Work Section -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <span class="section-header__number">&laquo;</span>
+      <h2 class="section-header__title">Selected <br><em>Works</em></h2>
+      <span class="section-header__line"></span>
+    </div>
+
+    <div class="work__grid">
+      <!-- 2nd Opinion -->
+      <article class="project">
+        <a href="https://secondopinionforum.com/about" target="_blank" rel="noopener" class="project__image-wrap" style="--hue: 210; --sat: 30%;">
+          <img src="images/2ndOpinionFullLogo.png" alt="2nd Opinion logo" class="project__img" loading="lazy" decoding="async" fetchpriority="low" width="400" height="220">
+          <span class="project__view">View Live Site &rarr;</span>
+        </a>
+        <div class="project__info">
+          <h3 class="project__title">2nd Opinion</h3>
+          <p class="project__description">A responsive social media forum focused on constructive feedback. Built with Vue.js, Firebase, and Vuex with RESTful API calls, real-time database, authentication, infinite scroll, and user-generated content with image uploads.</p>
+          <div class="project__details">
+            <span class="project__tag">Vue.js</span>
+            <span class="project__tag">Webpack</span>
+            <span class="project__tag">Sass</span>
+          </div>
+          <div class="project__links">
+            <a href="https://secondopinionforum.com/about" target="_blank" rel="noopener" class="project__ext-link">Live Site</a>
+            <a href="https://github.com/AdamCassidy/feedback-app" target="_blank" rel="noopener" class="project__ext-link">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Software Pic Assistant -->
+      <article class="project">
+        <a href="https://huggingface.co/Narrator5000/llavanext-finetuned-stackoverflow-vqa" target="_blank" rel="noopener" class="project__image-wrap" style="--hue: 280; --sat: 25%;">
+          <img src="images/softwarePicAssistant.png" alt="Software Pic Assistant" class="project__img" loading="lazy" decoding="async" fetchpriority="low" width="400" height="220">
+          <span class="project__view">View Model Card &rarr;</span>
+        </a>
+        <div class="project__info">
+          <h3 class="project__title">Software Pic Assistant</h3>
+          <p class="project__description">A finetuned LLaVA-Next model for visual question answering on Stack Overflow questions. Uses QLoRA with 4-bit quantization for technical VQA with image inputs.</p>
+          <div class="project__details">
+            <span class="project__tag">Python</span>
+            <span class="project__tag">ML / AI</span>
+            <span class="project__tag">LLaVA-Next</span>
+          </div>
+          <div class="project__links">
+            <a href="https://huggingface.co/Narrator5000/llavanext-finetuned-stackoverflow-vqa" target="_blank" rel="noopener" class="project__ext-link">Model Card</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GreenThumb -->
+      <article class="project">
+        <a href="https://github.com/AdamCassidy/GreenThumb/tree/master-backend/backend" target="_blank" rel="noopener" class="project__image-wrap" style="--hue: 140; --sat: 30%;">
+          <img src="images/greenthumbLogo.png" alt="GreenThumb logo" class="project__img" loading="lazy" decoding="async" fetchpriority="low" width="400" height="220">
+          <span class="project__view">View Source &rarr;</span>
+        </a>
+        <div class="project__info">
+          <h3 class="project__title">GreenThumb</h3>
+          <p class="project__description">A responsive mobile app that identifies plant species from user photos using Python, with a Node.js/Express RESTful API backend and MS SQL storage. Built in an Agile environment.</p>
+          <div class="project__details">
+            <span class="project__tag">Node.js</span>
+            <span class="project__tag">Javascript</span>
+            <span class="project__tag">RESTful API</span>
+          </div>
+          <div class="project__links">
+            <a href="https://github.com/AdamCassidy/GreenThumb/tree/master-backend/backend" target="_blank" rel="noopener" class="project__ext-link">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DetectPhoneMovement -->
+      <article class="project">
+        <a href="https://github.com/AdamCassidy/DetectPhoneMovement" target="_blank" rel="noopener" class="project__image-wrap" style="--hue: 30; --sat: 35%;">
+          <img src="images/detectPhoneMovement.gif" alt="DetectPhoneMovement demo" class="project__img" loading="lazy" decoding="async" fetchpriority="low" width="400" height="220">
+          <span class="project__view">View Source &rarr;</span>
+        </a>
+        <div class="project__info">
+          <h3 class="project__title">DetectPhoneMovement</h3>
+          <p class="project__description">An Android app built by request for law enforcement that sends a notification with the device's unique ID if the phone is even slightly moved.</p>
+          <div class="project__details">
+            <span class="project__tag">Android Studio</span>
+            <span class="project__tag">Firebase</span>
+            <span class="project__tag">Volley</span>
+          </div>
+          <div class="project__links">
+            <a href="https://github.com/AdamCassidy/DetectPhoneMovement" target="_blank" rel="noopener" class="project__ext-link">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PyBraid -->
+      <article class="project">
+        <a href="https://github.com/AdamCassidy/PyBraid" target="_blank" rel="noopener" class="project__image-wrap" style="--hue: 350; --sat: 20%;">
+          <img src="images/pybraidLogo.png" alt="PyBraid logo" class="project__img" loading="lazy" decoding="async" fetchpriority="low" width="400" height="220">
+          <span class="project__view">View Source &rarr;</span>
+        </a>
+        <div class="project__info">
+          <h3 class="project__title">PyBraid</h3>
+          <p class="project__description">A Python library built with unit testing and test-driven development, featuring various unique object-oriented data structures and algorithms.</p>
+          <div class="project__details">
+            <span class="project__tag">Python</span>
+            <span class="project__tag">Data Structures</span>
+            <span class="project__tag">TDD</span>
+          </div>
+          <div class="project__links">
+            <a href="https://github.com/AdamCassidy/PyBraid" target="_blank" rel="noopener" class="project__ext-link">Source Code</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-header">
+      <span class="section-header__number">&laquo;</span>
+      <h2 class="section-header__title">About <br><em>Me</em></h2>
+      <span class="section-header__line"></span>
+    </div>
+
+    <div class="about__content">
+      <div class="about__text">
+        <p class="about__lead">
+          I believe the best technology has the user's goals <strong>top of mind</strong>.
+        </p>
+        <p class="about__body">
+          From real-time social platforms to machine learning models, I bring a thoughtful approach to every layer of the stack.
+        </p>
+        <p class="about__body">
+          I believe that exceptional results are born from clarity and collaboration. Whether it's building RESTful APIs, training ML models, or crafting responsive frontends, I focus on clean architecture and purposeful design decisions.
+        </p>
+      </div>
+      <div class="about__skills">
+        <div class="about__skill-group">
+          <h4 class="about__skill-title">Frontend</h4>
+          <ul class="about__skill-list">
+            <li>Vue.js</li>
+            <li>Sass / CSS</li>
+            <li>Webpack</li>
+            <li>SEO & Performance</li>
+          </ul>
+        </div>
+        <div class="about__skill-group">
+          <h4 class="about__skill-title">Backend</h4>
+          <ul class="about__skill-list">
+            <li>Node.js / Express</li>
+            <li>Actor Model</li>
+            <li>Play Framework</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="about__skill-group">
+          <h4 class="about__skill-title">Cloud & Other</h4>
+          <ul class="about__skill-list">
+            <li>AWS</li>
+            <li>Python / ML</li>
+            <li>Git / Agile</li>
+            <li>Claude Code/ Cursor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWS Certifications -->
+    <section class="hero__certs-section">
+      <div class="hero__certs">
+        <a href="https://www.credly.com/badges/c9d9124e-0605-4e77-bf8b-d74afa0e4bb1/linked_in_profile" target="_blank" rel="noopener" class="hero__cert">
+          <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" class="hero__cert-img" loading="lazy" decoding="async" fetchpriority="low" width="60" height="60">
+          <div class="hero__cert-text">
+            <span class="hero__cert-badge">AWS</span>
+            <span class="hero__cert-name">Cloud Practitioner</span>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/877f3856-001b-4308-abc8-913e1c029cd5/linked_in?t=t48i2j" target="_blank" rel="noopener" class="hero__cert">
+          <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" class="hero__cert-img" loading="lazy" decoding="async" fetchpriority="low" width="60" height="60">
+          <div class="hero__cert-text">
+            <span class="hero__cert-badge">AWS</span>
+            <span class="hero__cert-name">Solutions Architect &ndash; Associate</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </section>
+
+  <!-- Lighthouse Scores -->
+  <section class="lighthouse" id="lighthouse">
+    <div class="lighthouse__content">
+      <div class="lighthouse__header">
+        <span class="lighthouse__label">Lighthouse</span>
+        <span class="lighthouse__sublabel">Live PageSpeed Insights</span>
+      </div>
+      <div class="lighthouse__scores">
+        <div class="lighthouse__metric" data-category="performance">
+          <svg class="lighthouse__ring" viewBox="0 0 120 120">
+            <circle class="lighthouse__ring-bg" cx="60" cy="60" r="52" />
+            <circle class="lighthouse__ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+          </svg>
+          <span class="lighthouse__score" data-score="--">--</span>
+          <span class="lighthouse__metric-name">Performance</span>
+        </div>
+        <div class="lighthouse__metric" data-category="accessibility">
+          <svg class="lighthouse__ring" viewBox="0 0 120 120">
+            <circle class="lighthouse__ring-bg" cx="60" cy="60" r="52" />
+            <circle class="lighthouse__ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+          </svg>
+          <span class="lighthouse__score" data-score="--">--</span>
+          <span class="lighthouse__metric-name">Accessibility</span>
+        </div>
+        <div class="lighthouse__metric" data-category="seo">
+          <svg class="lighthouse__ring" viewBox="0 0 120 120">
+            <circle class="lighthouse__ring-bg" cx="60" cy="60" r="52" />
+            <circle class="lighthouse__ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+          </svg>
+          <span class="lighthouse__score" data-score="--">--</span>
+          <span class="lighthouse__metric-name">SEO</span>
+        </div>
+      </div>
+      <p class="lighthouse__note">Scores fetched live via Google PageSpeed Insights API</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact__content">
+      <div class="contact__heading">
+        <span class="contact__label">&laquo; Get in Touch</span>
+        <h2 class="contact__title">
+          I'll solve your problems<span class="accent">.</span>
+        </h2>
+      </div>
+      <div class="contact__links">
+        <a href="mailto:adamcassidy011@gmail.com" class="contact__link">
+          <span class="contact__link-label">Email</span>
+          <span class="contact__link-value">adamcassidy011@gmail.com</span>
+          <span class="contact__link-arrow">&rarr;</span>
+        </a>
+        <a href="https://www.linkedin.com/in/adam-cassidy-474a8a10a/" target="_blank" rel="noopener" class="contact__link">
+          <span class="contact__link-label">LinkedIn</span>
+          <span class="contact__link-value">linkedin.com/in/adam-cassidy</span>
+          <span class="contact__link-arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__content">
+      <span class="footer__copyright">&copy; 2026 Adam Cassidy</span>
+      <span class="footer__built">Built with intention</span>
+      <a href="#" class="footer__top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
